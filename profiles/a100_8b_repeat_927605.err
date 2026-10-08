@@ -1,0 +1,46 @@
+/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.95it/s]
+/scratch/e2032a10/Infinity/tools/run_infinity_batch_repeat.py:180: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=True, dtype=torch.bfloat16, cache_enabled=True), torch.no_grad():
+/scratch/e2032a10/Infinity/tools/run_infinity_batch_repeat.py:410: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(dtype=torch.bfloat16):
+/scratch/e2032a10/Infinity/tools/run_infinity_batch_repeat.py:113: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=True, dtype=torch.bfloat16, cache_enabled=True):
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+Traceback (most recent call last):
+  File "/scratch/e2032a10/Infinity/tools/run_infinity_batch_repeat.py", line 422, in <module>
+    generated_image = gen_one_img(
+  File "/scratch/e2032a10/Infinity/tools/run_infinity_batch_repeat.py", line 115, in gen_one_img
+    _, _, img_list = infinity_test.autoregressive_infer_cfg(
+  File "/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/scratch/e2032a10/Infinity/infinity/models/infinity.py", line 589, in autoregressive_infer_cfg
+    last_stage = m(x=last_stage, cond_BD=cond_BD_or_gss, ca_kv=ca_kv, attn_bias_or_two_vector=None, attn_fn=attn_fn, scale_schedule=scale_schedule, rope2d_freqs_grid=self.rope2d_freqs_grid, scale_ind=si)
+  File "/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/e2032a10/Infinity/infinity/models/basic.py", line 515, in forward
+    x_sa = self.sa(x_sa, attn_bias_or_two_vector, attn_fn, scale_schedule, rope2d_freqs_grid, scale_ind=scale_ind)
+  File "/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/scratch/e2032a10/Infinity/infinity/models/basic.py", line 291, in forward
+    q, k = apply_rotary_emb(q, k, scale_schedule, rope2d_freqs_grid, self.pad_to_multiplier, self.rope2d_normalized_by_hw, scale_ind) #, freqs_cis=freqs_cis)
+  File "/scratch/e2032a10/Infinity/infinity/models/basic.py", line 110, in apply_rotary_emb
+    qk = torch.stack([
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 378.00 MiB. GPU 0 has a total capacity of 79.25 GiB of which 291.31 MiB is free. Process 67046 has 496.00 MiB memory in use. Process 67879 has 4.61 GiB memory in use. Process 67849 has 4.62 GiB memory in use. Process 67860 has 4.66 GiB memory in use. Process 67877 has 4.66 GiB memory in use. Process 67855 has 4.65 GiB memory in use. Process 67858 has 4.61 GiB memory in use. Process 67872 has 4.61 GiB memory in use. Including non-PyTorch memory, this process has 46.01 GiB memory in use. Of the allocated memory 42.12 GiB is allocated by PyTorch, and 3.39 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

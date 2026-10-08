@@ -1,0 +1,4 @@
+/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]slurmstepd: error: *** JOB 927673 ON gpu37 CANCELLED AT 2026-10-09T01:26:25 ***

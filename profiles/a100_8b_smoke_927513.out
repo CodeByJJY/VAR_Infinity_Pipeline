@@ -1,0 +1,50 @@
+==========================================
+SLURM_JOB_ID = 927513
+SLURM_NODELIST = gpu37
+==========================================
+===== JOB INFO =====
+Thu Oct  8 21:55:50 KST 2026
+gpu37
+NVIDIA A100-SXM4-80GB, 81920 MiB, 580.105.08
+torch= 2.7.1+cu128 cuda= 12.8 gpu= NVIDIA A100-SXM4-80GB
+===== 8B SMOKE START =====
+[Loading tokenizer and text encoder]
+[Loading Infinity]
+self.codebook_dim: 56, self.add_lvl_embeding_only_first_block: 0,             self.use_bit_label: 1, self.rope2d_each_sa_layer: 1, self.rope2d_normalized_by_hw: 2
+self.num_blocks_in_a_chunk=5, depth=40, block_chunks=8
+
+[constructor]  ==== customized_flash_attn=False (using_flash=0/40), fused_mlp=False (fused_mlp=0/40) ==== 
+    [Infinity config ] embed_dim=3584, num_heads=28, depth=40, mlp_ratio=4, swiglu=False num_blocks_in_a_chunk=5
+    [drop ratios] drop_rate=0.0, drop_path_rate=0.1 (tensor([0.0000, 0.0026, 0.0051, 0.0077, 0.0103, 0.0128, 0.0154, 0.0179, 0.0205,
+        0.0231, 0.0256, 0.0282, 0.0308, 0.0333, 0.0359, 0.0385, 0.0410, 0.0436,
+        0.0462, 0.0487, 0.0513, 0.0538, 0.0564, 0.0590, 0.0615, 0.0641, 0.0667,
+        0.0692, 0.0718, 0.0744, 0.0769, 0.0795, 0.0821, 0.0846, 0.0872, 0.0897,
+        0.0923, 0.0949, 0.0974, 0.1000]))
+
+[you selected Infinity with model_kwargs={'depth': 40, 'embed_dim': 3584, 'num_heads': 28, 'drop_path_rate': 0.1, 'mlp_ratio': 4, 'block_chunks': 8}] model size: 8.38B, bf16=1
+[Load Infinity weights]
+prompt=a photo of a red panda sitting on a wooden chair
+cfg: [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0], tau: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+
+=== SCALE_GPU_PROFILE_BEGIN ===
+scale,t,h,w,tokens,total_ms,transformer_ms,logits_ms,sampling_ms,codes_ms,next_scale_ms,word_embed_ms,other_ms
+0,1,1,1,1,33077.336,27935.125,1006.468,3536.806,39.823,327.325,17.931,213.857
+1,1,2,2,4,1959.416,1377.412,379.108,0.835,0.348,0.153,201.243,0.316
+2,1,4,4,16,144.162,72.387,15.557,0.638,0.254,0.118,54.962,0.246
+3,1,6,6,36,69.258,67.646,0.299,0.554,0.251,0.117,0.223,0.167
+4,1,8,8,64,67.518,66.132,0.296,0.405,0.239,0.114,0.195,0.138
+5,1,12,12,144,67.899,66.761,0.155,0.375,0.233,0.112,0.150,0.113
+6,1,16,16,256,70.537,69.860,0.189,0.309,0.033,0.031,0.053,0.063
+7,1,20,20,400,92.926,92.145,0.207,0.411,0.034,0.031,0.048,0.051
+8,1,24,24,576,135.445,134.482,0.271,0.532,0.034,0.032,0.072,0.024
+9,1,32,32,1024,229.327,227.951,0.336,0.856,0.034,0.032,0.095,0.023
+10,1,40,40,1600,351.289,349.366,0.396,1.292,0.035,0.033,0.143,0.024
+11,1,48,48,2304,526.109,523.482,0.535,1.754,0.036,0.030,0.247,0.024
+12,1,64,64,4096,1013.703,1009.760,0.851,3.031,0.039,0.000,0.000,0.022
+FINAL_DECODE_MS,10201.354
+=== SCALE_GPU_PROFILE_END ===
+
+cost: 59.46493077278137, infinity cost=50.484742403030396
+Save to /scratch/e2032a10/Infinity/outputs/a100_8b_smoke.jpg
+===== 8B SMOKE END =====
+Thu Oct  8 22:10:00 KST 2026

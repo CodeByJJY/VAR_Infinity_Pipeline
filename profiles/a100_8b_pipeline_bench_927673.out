@@ -1,0 +1,11 @@
+==========================================
+SLURM_JOB_ID = 927673
+SLURM_NODELIST = gpu37
+==========================================
+===== JOB INFO =====
+Fri Oct  9 01:23:42 KST 2026
+gpu37
+NVIDIA A100-SXM4-80GB, 81920 MiB, 580.105.08
+torch= 2.7.1+cu128 cuda= 12.8 gpu= NVIDIA A100-SXM4-80GB
+===== 8B REPEAT START =====
+[Loading tokenizer and text encoder]

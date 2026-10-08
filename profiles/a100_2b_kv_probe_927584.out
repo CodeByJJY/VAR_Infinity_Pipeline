@@ -1,0 +1,62 @@
+==========================================
+SLURM_JOB_ID = 927584
+SLURM_NODELIST = gpu39
+==========================================
+===== JOB INFO =====
+Thu Oct  8 23:44:30 KST 2026
+gpu39
+NVIDIA A100-SXM4-80GB, 81920 MiB, 580.105.08
+torch= 2.7.1+cu128 cuda= 12.8 gpu= NVIDIA A100-SXM4-80GB
+===== 8B REPEAT START =====
+[Loading tokenizer and text encoder]
+load checkpoint from weights/infinity_2b_reg.pth
+[Loading Infinity]
+self.codebook_dim: 32, self.add_lvl_embeding_only_first_block: 0,             self.use_bit_label: 1, self.rope2d_each_sa_layer: 1, self.rope2d_normalized_by_hw: 2
+self.num_blocks_in_a_chunk=4, depth=32, block_chunks=8
+
+[constructor]  ==== customized_flash_attn=False (using_flash=0/32), fused_mlp=False (fused_mlp=0/32) ==== 
+    [Infinity config ] embed_dim=2048, num_heads=16, depth=32, mlp_ratio=4, swiglu=False num_blocks_in_a_chunk=4
+    [drop ratios] drop_rate=0.0, drop_path_rate=0.1 (tensor([0.0000, 0.0032, 0.0065, 0.0097, 0.0129, 0.0161, 0.0194, 0.0226, 0.0258,
+        0.0290, 0.0323, 0.0355, 0.0387, 0.0419, 0.0452, 0.0484, 0.0516, 0.0548,
+        0.0581, 0.0613, 0.0645, 0.0677, 0.0710, 0.0742, 0.0774, 0.0806, 0.0839,
+        0.0871, 0.0903, 0.0935, 0.0968, 0.1000]))
+
+[you selected Infinity with model_kwargs={'depth': 32, 'embed_dim': 2048, 'num_heads': 16, 'drop_path_rate': 0.1, 'mlp_ratio': 4, 'block_chunks': 8}] model size: 2.20B, bf16=1
+[Load Infinity weights]
+<All keys matched successfully>
+KV_PROBE_MODULES,32
+REPEAT_CONFIG warmup=0 measured=1 batch_size=2
+===== MEASURE_1_BEGIN =====
+prompt=a photo of a red panda sitting on a wooden chair
+cfg: [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0], tau: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+
+=== SCALE_GPU_PROFILE_BEGIN ===
+scale,t,h,w,tokens,total_ms,transformer_ms,logits_ms,sampling_ms,codes_ms,next_scale_ms,word_embed_ms,other_ms
+0,1,1,1,1,2530.573,2322.767,165.679,39.209,1.690,0.510,0.455,0.262
+1,1,2,2,4,354.403,239.147,113.969,0.502,0.250,0.131,0.222,0.182
+2,1,4,4,16,58.126,56.656,0.425,0.435,0.207,0.147,0.111,0.146
+3,1,6,6,36,53.428,51.930,0.422,0.452,0.212,0.165,0.112,0.135
+4,1,8,8,64,59.107,57.434,0.520,0.432,0.320,0.224,0.058,0.119
+5,1,12,12,144,56.937,55.660,0.218,0.409,0.205,0.283,0.035,0.126
+6,1,16,16,256,56.738,55.515,0.171,0.402,0.133,0.395,0.049,0.072
+7,1,20,20,400,66.466,65.403,0.167,0.446,0.026,0.362,0.039,0.024
+8,1,24,24,576,90.922,89.653,0.193,0.588,0.026,0.380,0.059,0.023
+9,1,32,32,1024,158.175,156.427,0.244,0.982,0.026,0.390,0.081,0.024
+10,1,40,40,1600,249.112,246.789,0.298,1.438,0.028,0.417,0.118,0.024
+11,1,48,48,2304,385.326,382.389,0.423,1.998,0.029,0.271,0.191,0.025
+12,1,64,64,4096,752.242,748.094,0.635,3.459,0.031,0.000,0.000,0.022
+FINAL_DECODE_MS,453.668
+=== SCALE_GPU_PROFILE_END ===
+
+cost: 5.975242853164673, infinity cost=5.367923021316528
+KV_PROBE_FIRST_K_SHAPE (4, 16, 10521, 128)
+KV_PROBE_FIRST_V_SHAPE (4, 16, 10521, 128)
+KV_PROBE_SPLIT_SAMPLES 2
+KV_PROBE_STATES_PER_SAMPLE 32
+KV_PROBE_SAME_ORDER_EXACT True
+KV_PROBE_REORDER_EXACT True
+REAL_KV_CACHE_TEST_OK
+===== MEASURE_1_END =====
+Save to /scratch/e2032a10/Infinity/outputs/a100_2b_kv_probe.jpg
+===== 8B REPEAT END =====
+Thu Oct  8 23:45:05 KST 2026

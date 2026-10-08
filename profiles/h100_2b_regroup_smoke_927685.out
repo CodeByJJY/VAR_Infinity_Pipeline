@@ -1,0 +1,62 @@
+==========================================
+SLURM_JOB_ID = 927685
+SLURM_NODELIST = gpu59
+==========================================
+===== JOB INFO =====
+Fri Oct  9 01:28:43 KST 2026
+gpu59
+NVIDIA H100 NVL, 95830 MiB, 580.105.08
+torch= 2.7.1+cu128 cuda= 12.8 gpu= NVIDIA H100 NVL
+===== 8B REPEAT START =====
+[Loading tokenizer and text encoder]
+load checkpoint from weights/infinity_2b_reg.pth
+[Loading Infinity]
+self.codebook_dim: 32, self.add_lvl_embeding_only_first_block: 0,             self.use_bit_label: 1, self.rope2d_each_sa_layer: 1, self.rope2d_normalized_by_hw: 2
+self.num_blocks_in_a_chunk=4, depth=32, block_chunks=8
+
+[constructor]  ==== customized_flash_attn=False (using_flash=0/32), fused_mlp=False (fused_mlp=0/32) ==== 
+    [Infinity config ] embed_dim=2048, num_heads=16, depth=32, mlp_ratio=4, swiglu=False num_blocks_in_a_chunk=4
+    [drop ratios] drop_rate=0.0, drop_path_rate=0.1 (tensor([0.0000, 0.0032, 0.0065, 0.0097, 0.0129, 0.0161, 0.0194, 0.0226, 0.0258,
+        0.0290, 0.0323, 0.0355, 0.0387, 0.0419, 0.0452, 0.0484, 0.0516, 0.0548,
+        0.0581, 0.0613, 0.0645, 0.0677, 0.0710, 0.0742, 0.0774, 0.0806, 0.0839,
+        0.0871, 0.0903, 0.0935, 0.0968, 0.1000]))
+
+[you selected Infinity with model_kwargs={'depth': 32, 'embed_dim': 2048, 'num_heads': 16, 'drop_path_rate': 0.1, 'mlp_ratio': 4, 'block_chunks': 8}] model size: 2.20B, bf16=1
+[Load Infinity weights]
+<All keys matched successfully>
+prompt=a photo of a red panda sitting on a wooden chair
+PIPELINE_REGROUP_SMOKE_BEGIN
+logical_batch = 2
+num_scales = 13
+PIPELINE_GROUP_ORDER 0 [0, 1]
+PIPELINE_SCALE 0 batch 2 idx_shape (2, 1, 1, 1, 32) next_scale_idx 1 wall_ms 2518.079
+PIPELINE_GROUP_ORDER 1 [1, 0]
+PIPELINE_SCALE 1 batch 2 idx_shape (2, 1, 2, 2, 32) next_scale_idx 2 wall_ms 275.390
+PIPELINE_GROUP_ORDER 2 [0, 1]
+PIPELINE_SCALE 2 batch 2 idx_shape (2, 1, 4, 4, 32) next_scale_idx 3 wall_ms 66.004
+PIPELINE_GROUP_ORDER 3 [1, 0]
+PIPELINE_SCALE 3 batch 2 idx_shape (2, 1, 6, 6, 32) next_scale_idx 4 wall_ms 70.856
+PIPELINE_GROUP_ORDER 4 [0, 1]
+PIPELINE_SCALE 4 batch 2 idx_shape (2, 1, 8, 8, 32) next_scale_idx 5 wall_ms 69.105
+PIPELINE_GROUP_ORDER 5 [1, 0]
+PIPELINE_SCALE 5 batch 2 idx_shape (2, 1, 12, 12, 32) next_scale_idx 6 wall_ms 63.806
+PIPELINE_GROUP_ORDER 6 [0, 1]
+PIPELINE_SCALE 6 batch 2 idx_shape (2, 1, 16, 16, 32) next_scale_idx 7 wall_ms 62.780
+PIPELINE_GROUP_ORDER 7 [1, 0]
+PIPELINE_SCALE 7 batch 2 idx_shape (2, 1, 20, 20, 32) next_scale_idx 8 wall_ms 65.320
+PIPELINE_GROUP_ORDER 8 [0, 1]
+PIPELINE_SCALE 8 batch 2 idx_shape (2, 1, 24, 24, 32) next_scale_idx 9 wall_ms 61.701
+PIPELINE_GROUP_ORDER 9 [1, 0]
+PIPELINE_SCALE 9 batch 2 idx_shape (2, 1, 32, 32, 32) next_scale_idx 10 wall_ms 93.926
+PIPELINE_GROUP_ORDER 10 [0, 1]
+PIPELINE_SCALE 10 batch 2 idx_shape (2, 1, 40, 40, 32) next_scale_idx 11 wall_ms 161.518
+PIPELINE_GROUP_ORDER 11 [1, 0]
+PIPELINE_SCALE 11 batch 2 idx_shape (2, 1, 48, 48, 32) next_scale_idx 12 wall_ms 246.177
+PIPELINE_GROUP_ORDER 12 [0, 1]
+PIPELINE_SCALE 12 batch 2 idx_shape (2, 1, 64, 64, 32) next_scale_idx 13 wall_ms 499.517
+PIPELINE_DECODE_SHAPE (2, 3, 1024, 1024)
+PIPELINE_TOTAL_S 4.564165
+PIPELINE_FINAL_SCALE_IDX 13
+PIPELINE_REGROUP_SMOKE_OK
+===== 8B REPEAT END =====
+Fri Oct  9 01:29:21 KST 2026

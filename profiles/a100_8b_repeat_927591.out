@@ -1,0 +1,9 @@
+==========================================
+SLURM_JOB_ID = 927591
+SLURM_NODELIST = gpu36
+==========================================
+===== JOB INFO =====
+Thu Oct  8 23:55:01 KST 2026
+gpu36
+NVIDIA A100-SXM4-80GB, 81920 MiB, 580.105.08
+torch= 2.7.1+cu128 cuda= 12.8 gpu= NVIDIA A100-SXM4-80GB

@@ -1,0 +1,5 @@
+RESULT Sequential-B1 mean_s=5.980472 mean_img_s=0.334422 peak_gb=36.961
+RESULT Fixed-B2 mean_s=5.405175 mean_img_s=0.370016 peak_gb=54.972
+RESULT ScaleAware mean_s=5.611976 mean_img_s=0.356381 peak_gb=59.668
+SCALEAWARE_VS_SEQUENTIAL_GAIN_PCT 6.57
+SCALEAWARE_FIXED_B2_THROUGHPUT_PCT 96.32

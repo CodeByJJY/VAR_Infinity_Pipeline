@@ -1,0 +1,15 @@
+Downloading 'infinity_vae_d56_f8_14_patchify.pth' to 'weights/.cache/huggingface/download/ik9Am-MfJr388jMXgEHG5Homqb8=.c4c695350125593dde7ec7120e6dff7039a9adea01516f6e14758eb94e3ec6c2.incomplete'
+Download complete. Moving file to weights/infinity_vae_d56_f8_14_patchify.pth
+weights/infinity_vae_d56_f8_14_patchify.pth
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Downloading 'infinity_8b_weights/model-00003-of-00004.safetensors' to 'weights/.cache/huggingface/download/infinity_8b_weights/DaGOU-KRMVrY0aYktrsE34tL0Bs=.89f7a89084349ea2f35835ef8cc945fce0809262ccb0b5ac51e27cc21b9f1cc7.incomplete'
+Downloading 'infinity_8b_weights/model.safetensors.index.json' to 'weights/.cache/huggingface/download/infinity_8b_weights/yVzAsSxRSINSz-tQbpx-TLpfkLU=.3f71f880ecbe754ff26210893110342ded56257a.incomplete'
+Downloading 'infinity_8b_weights/model-00001-of-00004.safetensors' to 'weights/.cache/huggingface/download/infinity_8b_weights/IO4xwqmZYzFmxznkwkiNSBwO1H0=.b79c2f4b22b58a686ad490431f724a3d388c144c8e60c23b96eaadc898b5ebfd.incomplete'
+Download complete. Moving file to weights/infinity_8b_weights/model.safetensors.index.json
+Fetching 5 files:  20%|██        | 1/5 [00:00<00:02,  1.91it/s]Downloading 'infinity_8b_weights/model-00004-of-00004.safetensors' to 'weights/.cache/huggingface/download/infinity_8b_weights/-dFtyT7kcgbTHt1cy9JKqruJCR4=.0247d1534bb17e0816228668eee3db6186110cbc679469217402a43adc7cf049.incomplete'
+Downloading 'infinity_8b_weights/model-00002-of-00004.safetensors' to 'weights/.cache/huggingface/download/infinity_8b_weights/t9msAuTjAZjuQnmzGOwTjiptvIU=.5e304b757cf60a0d3742aac2c5c8f194ee43ad845e637bd2d01bc421254abd8b.incomplete'
+Download complete. Moving file to weights/infinity_8b_weights/model-00003-of-00004.safetensors
+Download complete. Moving file to weights/infinity_8b_weights/model-00001-of-00004.safetensors
+Fetching 5 files:  40%|████      | 2/5 [04:45<07:07, 142.65s/it]Download complete. Moving file to weights/infinity_8b_weights/model-00002-of-00004.safetensors
+Fetching 5 files:  80%|████████  | 4/5 [05:03<01:15, 75.83s/it] Download complete. Moving file to weights/infinity_8b_weights/model-00004-of-00004.safetensors
+Fetching 5 files: 100%|██████████| 5/5 [05:12<00:00, 62.53s/it]Fetching 5 files: 100%|██████████| 5/5 [05:12<00:00, 62.53s/it]
+/scratch/e2032a10/Infinity/weights

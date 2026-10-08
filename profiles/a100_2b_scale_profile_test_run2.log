@@ -1,0 +1,61 @@
+/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+`torch_dtype` is deprecated! Use `dtype` instead!
+[Loading tokenizer and text encoder]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.96s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.02it/s]
+/scratch/e2032a10/Infinity/tools/run_infinity.py:179: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=True, dtype=torch.bfloat16, cache_enabled=True), torch.no_grad():
+load checkpoint from weights/infinity_2b_reg.pth
+[Loading Infinity]
+self.codebook_dim: 32, self.add_lvl_embeding_only_first_block: 0,             self.use_bit_label: 1, self.rope2d_each_sa_layer: 1, self.rope2d_normalized_by_hw: 2
+self.num_blocks_in_a_chunk=4, depth=32, block_chunks=8
+
+[constructor]  ==== customized_flash_attn=False (using_flash=0/32), fused_mlp=False (fused_mlp=0/32) ==== 
+    [Infinity config ] embed_dim=2048, num_heads=16, depth=32, mlp_ratio=4, swiglu=False num_blocks_in_a_chunk=4
+    [drop ratios] drop_rate=0.0, drop_path_rate=0.1 (tensor([0.0000, 0.0032, 0.0065, 0.0097, 0.0129, 0.0161, 0.0194, 0.0226, 0.0258,
+        0.0290, 0.0323, 0.0355, 0.0387, 0.0419, 0.0452, 0.0484, 0.0516, 0.0548,
+        0.0581, 0.0613, 0.0645, 0.0677, 0.0710, 0.0742, 0.0774, 0.0806, 0.0839,
+        0.0871, 0.0903, 0.0935, 0.0968, 0.1000]))
+
+/scratch/e2032a10/Infinity/tools/run_infinity.py:402: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(dtype=torch.bfloat16):
+/scratch/e2032a10/Infinity/tools/run_infinity.py:112: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=True, dtype=torch.bfloat16, cache_enabled=True):
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/infinity/models/basic.py:495: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=False):    # disable half precision
+/scratch/e2032a10/Infinity/.venv_inf/lib64/python3.9/site-packages/networkx/utils/backends.py:135: RuntimeWarning: networkx backend defined more than once: nx-loopback
+  backends.update(_get_backends("networkx.backends"))
+[you selected Infinity with model_kwargs={'depth': 32, 'embed_dim': 2048, 'num_heads': 16, 'drop_path_rate': 0.1, 'mlp_ratio': 4, 'block_chunks': 8}] model size: 2.20B, bf16=1
+[Load Infinity weights]
+<All keys matched successfully>
+prompt=a photo of a red panda sitting on a wooden chair
+cfg: [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0], tau: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+
+=== SCALE_GPU_PROFILE_BEGIN ===
+scale,t,h,w,tokens,total_ms,transformer_ms,logits_ms,sampling_ms,codes_ms,next_scale_ms,word_embed_ms,other_ms
+0,1,1,1,1,2402.604,2234.428,112.900,52.171,1.898,0.474,0.450,0.282
+1,1,2,2,4,252.358,194.118,57.110,0.475,0.215,0.105,0.142,0.193
+2,1,4,4,16,55.674,54.207,0.426,0.397,0.203,0.093,0.197,0.152
+3,1,6,6,36,56.803,55.456,0.399,0.380,0.190,0.097,0.136,0.146
+4,1,8,8,64,52.304,50.927,0.377,0.369,0.201,0.107,0.193,0.130
+5,1,12,12,144,54.380,53.086,0.379,0.372,0.191,0.142,0.098,0.112
+6,1,16,16,256,52.716,51.537,0.319,0.340,0.187,0.175,0.064,0.095
+7,1,20,20,400,54.135,53.041,0.181,0.373,0.188,0.207,0.031,0.114
+8,1,24,24,576,54.286,53.182,0.147,0.413,0.158,0.217,0.084,0.085
+9,1,32,32,1024,91.448,90.409,0.174,0.538,0.028,0.201,0.048,0.050
+10,1,40,40,1600,129.009,127.706,0.202,0.776,0.027,0.212,0.062,0.024
+11,1,48,48,2304,200.185,198.538,0.249,1.094,0.028,0.143,0.108,0.024
+12,1,64,64,4096,386.989,384.714,0.404,1.820,0.029,0.000,0.000,0.021
+FINAL_DECODE_MS,328.196
+=== SCALE_GPU_PROFILE_END ===
+
+cost: 8.500699520111084, infinity cost=4.215792655944824
+Save to /scratch/e2032a10/Infinity/outputs/a100_2b_scale_profile_test_run2.jpg

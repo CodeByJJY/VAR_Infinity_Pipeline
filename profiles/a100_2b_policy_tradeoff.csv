@@ -1,0 +1,7 @@
+policy,path_service_latency_ms,steady_state_images_per_s
+Fixed-B1,1505.520,0.6642
+Fixed-B2,2486.077,0.8045
+Fixed-B4,4514.637,0.8860
+Fixed-B6,6582.741,0.9115
+Fixed-B7,7610.040,0.9198
+ScaleAware95,3403.516,0.8994
